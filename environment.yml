@@ -1,0 +1,28 @@
+name: SimpleDTA
+
+channels: 
+    - defaults 
+    - pytorch 
+    - conda-forge
+    - pyg
+
+dependencies:
+    - python=3.9
+    - matplotlib
+    - pyg
+    - pytorch=1.11
+    - torchvision
+    - seaborn
+    - scikit-learn
+    - cudatoolkit=11.3
+    - h5py
+    - tensorboard
+    - shapely
+    - statsmodels
+    - pip
+    - rdkit
+    - pip:
+        - ipykernel
+        - umap-learn
+        - biopython
+        - pyTDC

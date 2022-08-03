@@ -3,8 +3,17 @@
 #######################################################################################################################
 
 
-# pFam ; protein families
-pfam=http://ftp.ebi.ac.uk/pub/databases/Pfam/Pfam-N/pfamA.tsv
+
+# CLUE compound data
+# info: https://clue.io/releases/data-dashboard
+l1000_phaseII_compoundinfo=https://s3.amazonaws.com/macchiato.clue.io/builds/LINCS2020/compoundinfo_beta.txt
+
+# gene info 
+l1000_phaseII_geneinfo=https://s3.amazonaws.com/macchiato.clue.io/builds/LINCS2020/geneinfo_beta.txt
+ 
+# Targetome 
+targetome=https://raw.githubusercontent.com/ablucher/The-Cancer-Targetome/master/results_070617/Targetome_FullEvidence_070617.txt
+
 
 #######################################################################################################################
 #######################################################################################################################
@@ -25,5 +34,7 @@ date > $ROOT/date_of_download.txt
 #######################################################################################################################
 #######################################################################################################################
 
+[ ! -f "$ROOT/compoundinfo_beta.txt" ] && wget $l1000_phaseII_compoundinfo -O $ROOT/compoundinfo_beta.txt
+[ ! -f "$ROOT/geneinfo_beta.txt" ] && wget $l1000_phaseII_geneinfo -O $ROOT/geneinfo_beta.txt
+[ ! -f "$ROOT/targetome.txt" ] && wget $targetome -O $ROOT/targetome.txt
 
-[ ! -f "$ROOT/pfamA.tsv" ] && wget $pfam -O $ROOT/pfamA.tsv
